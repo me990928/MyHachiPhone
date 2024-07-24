@@ -10,52 +10,67 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Environment(\.colorScheme) var colorScheme
+    @Query (sort: \SalaryData.startTime) private var salary: [SalaryData]
+    @Query private var times: [SalaryTimeData]
+    
+    @State var isOpenTopView: Bool = false
+    @State var path: NavigationPath = NavigationPath()
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        NavigationStack(path: $path) {
+                VStack{
+                    List {
+                            Section(content: {
+                                NavigationLink("入力画面"){
+                                    ScrollView (showsIndicators: false) {
+                                        InputView().navigationTitle("入力画面").padding()
+                                    }
+                                }
+                                NavigationLink("月間別給料"){
+                                    ScrollView(showsIndicators: false){
+                                        VStack{
+                                            MonthView().navigationTitle("月間別給料")
+                                            Spacer().frame(height: 300)
+                                        }
+                                    }.padding()
+                                }
+                                
+                            }, header: {
+                                    Text("Menu")
+                            })
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    
+                    .navigationDestination(isPresented: $isOpenTopView) {
+                        ContentView()
+                    }.frame(maxHeight: 150)
+                    
+                    ScrollView{
+                        Section {
+                            SalaryNavi().padding()
+                        } header: {
+                            HStack{
+                                Text("日給一覧").foregroundStyle(.secondary)
+                                Spacer()
+                            }.padding(.leading).listRowInsets(EdgeInsets())
+                        }
+                        Spacer()
                     }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+                }.background(colorScheme == .light ? Color(.secondarySystemBackground) : .clear)
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+    
+    
+    func times(fillterd: String)->SalaryTimeData{
+        let res: SalaryTimeData = SalaryTimeData(id: "", salaryId: "", normalTime: 0.0, singleTime: 0.0, doubleTime: 0.0)
+        guard !fillterd.isEmpty else {
+            return res
         }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+        return times.filter{$0.salaryId.contains(fillterd)}.first ?? res
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: [SalaryData.self, SalaryTimeData.self, ShiftPlans.self], inMemory: true)
 }

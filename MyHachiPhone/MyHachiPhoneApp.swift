@@ -12,7 +12,9 @@ import SwiftData
 struct MyHachiPhoneApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            SalaryData.self,
+            SalaryTimeData.self,
+            ShiftPlans.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

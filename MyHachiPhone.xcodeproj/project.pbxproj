@@ -7,20 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED78430B2C0AF53400E7DBF8 /* ShiftPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78430A2C0AF53400E7DBF8 /* ShiftPlans.swift */; };
+		ED78430D2C0C640200E7DBF8 /* RefactorDataSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED78430C2C0C640200E7DBF8 /* RefactorDataSheet.swift */; };
+		ED7843142C0CC69300E7DBF8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = ED7843132C0CC69300E7DBF8 /* Localizable.xcstrings */; };
 		EDCA034F2BFC41B30077F2BA /* MyHachiPhoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA034E2BFC41B30077F2BA /* MyHachiPhoneApp.swift */; };
 		EDCA03512BFC41B30077F2BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03502BFC41B30077F2BA /* ContentView.swift */; };
-		EDCA03532BFC41B30077F2BA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03522BFC41B30077F2BA /* Item.swift */; };
 		EDCA03552BFC41B30077F2BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCA03542BFC41B30077F2BA /* Assets.xcassets */; };
 		EDCA03582BFC41B30077F2BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCA03572BFC41B30077F2BA /* Preview Assets.xcassets */; };
+		EDCA03782BFC42C10077F2BA /* DateTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03622BFC42C10077F2BA /* DateTranslator.swift */; };
+		EDCA03792BFC42C10077F2BA /* Hachi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03632BFC42C10077F2BA /* Hachi.swift */; };
+		EDCA037A2BFC42C10077F2BA /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03642BFC42C10077F2BA /* Salary.swift */; };
+		EDCA037B2BFC42C10077F2BA /* WorkTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03652BFC42C10077F2BA /* WorkTime.swift */; };
+		EDCA037C2BFC42C10077F2BA /* MonthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03672BFC42C10077F2BA /* MonthModel.swift */; };
+		EDCA037D2BFC42C10077F2BA /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03682BFC42C10077F2BA /* MonthView.swift */; };
+		EDCA037E2BFC42C10077F2BA /* MonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03692BFC42C10077F2BA /* MonthViewModel.swift */; };
+		EDCA037F2BFC42C10077F2BA /* CountUPMoney.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA036B2BFC42C10077F2BA /* CountUPMoney.swift */; };
+		EDCA03802BFC42C10077F2BA /* CountUPState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA036C2BFC42C10077F2BA /* CountUPState.swift */; };
+		EDCA03812BFC42C10077F2BA /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA036E2BFC42C10077F2BA /* InputView.swift */; };
+		EDCA03822BFC42C10077F2BA /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA036F2BFC42C10077F2BA /* InputViewModel.swift */; };
+		EDCA03832BFC42C10077F2BA /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03712BFC42C10077F2BA /* InputValue.swift */; };
+		EDCA03842BFC42C10077F2BA /* SalaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03722BFC42C10077F2BA /* SalaryData.swift */; };
+		EDCA03852BFC42C10077F2BA /* SalaryTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03732BFC42C10077F2BA /* SalaryTimeData.swift */; };
+		EDCA03862BFC42C10077F2BA /* Wage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03742BFC42C10077F2BA /* Wage.swift */; };
+		EDCA03872BFC42C10077F2BA /* WorkParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03752BFC42C10077F2BA /* WorkParameters.swift */; };
+		EDCA03882BFC42C10077F2BA /* WorkTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03762BFC42C10077F2BA /* WorkTimes.swift */; };
+		EDCA038B2BFC6CBC0077F2BA /* NavContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA038A2BFC6CBC0077F2BA /* NavContent.swift */; };
+		EDCA03AE2C02E28A0077F2BA /* SalaryNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03AD2C02E28A0077F2BA /* SalaryNavi.swift */; };
+		EDCA03B02C02E2970077F2BA /* SalaryNaviModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03AF2C02E2970077F2BA /* SalaryNaviModel.swift */; };
+		EDCA03B22C02E2A70077F2BA /* SalaryNaviViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03B12C02E2A70077F2BA /* SalaryNaviViewModel.swift */; };
+		EDCA03B42C02E42C0077F2BA /* MonthlySalary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03B32C02E42C0077F2BA /* MonthlySalary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED78430A2C0AF53400E7DBF8 /* ShiftPlans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPlans.swift; sourceTree = "<group>"; };
+		ED78430C2C0C640200E7DBF8 /* RefactorDataSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorDataSheet.swift; sourceTree = "<group>"; };
+		ED78430E2C0CAF0700E7DBF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ED7843132C0CC69300E7DBF8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		EDCA034B2BFC41B30077F2BA /* MyHachiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHachiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCA034E2BFC41B30077F2BA /* MyHachiPhoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHachiPhoneApp.swift; sourceTree = "<group>"; };
 		EDCA03502BFC41B30077F2BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		EDCA03522BFC41B30077F2BA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EDCA03542BFC41B30077F2BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDCA03572BFC41B30077F2BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDCA03622BFC42C10077F2BA /* DateTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTranslator.swift; sourceTree = "<group>"; };
+		EDCA03632BFC42C10077F2BA /* Hachi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hachi.swift; sourceTree = "<group>"; };
+		EDCA03642BFC42C10077F2BA /* Salary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
+		EDCA03652BFC42C10077F2BA /* WorkTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTime.swift; sourceTree = "<group>"; };
+		EDCA03672BFC42C10077F2BA /* MonthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthModel.swift; sourceTree = "<group>"; };
+		EDCA03682BFC42C10077F2BA /* MonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		EDCA03692BFC42C10077F2BA /* MonthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthViewModel.swift; sourceTree = "<group>"; };
+		EDCA036B2BFC42C10077F2BA /* CountUPMoney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountUPMoney.swift; sourceTree = "<group>"; };
+		EDCA036C2BFC42C10077F2BA /* CountUPState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountUPState.swift; sourceTree = "<group>"; };
+		EDCA036E2BFC42C10077F2BA /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		EDCA036F2BFC42C10077F2BA /* InputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
+		EDCA03712BFC42C10077F2BA /* InputValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValue.swift; sourceTree = "<group>"; };
+		EDCA03722BFC42C10077F2BA /* SalaryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaryData.swift; sourceTree = "<group>"; };
+		EDCA03732BFC42C10077F2BA /* SalaryTimeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaryTimeData.swift; sourceTree = "<group>"; };
+		EDCA03742BFC42C10077F2BA /* Wage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wage.swift; sourceTree = "<group>"; };
+		EDCA03752BFC42C10077F2BA /* WorkParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkParameters.swift; sourceTree = "<group>"; };
+		EDCA03762BFC42C10077F2BA /* WorkTimes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTimes.swift; sourceTree = "<group>"; };
+		EDCA038A2BFC6CBC0077F2BA /* NavContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavContent.swift; sourceTree = "<group>"; };
+		EDCA03AD2C02E28A0077F2BA /* SalaryNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryNavi.swift; sourceTree = "<group>"; };
+		EDCA03AF2C02E2970077F2BA /* SalaryNaviModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryNaviModel.swift; sourceTree = "<group>"; };
+		EDCA03B12C02E2A70077F2BA /* SalaryNaviViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryNaviViewModel.swift; sourceTree = "<group>"; };
+		EDCA03B32C02E42C0077F2BA /* MonthlySalary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySalary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +102,18 @@
 		EDCA034D2BFC41B30077F2BA /* MyHachiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				ED78430E2C0CAF0700E7DBF8 /* Info.plist */,
+				EDCA03AB2C02E24F0077F2BA /* SalaryNavi */,
+				EDCA03892BFC6C9E0077F2BA /* NavContent */,
+				EDCA03702BFC42C10077F2BA /* InputView */,
+				EDCA03772BFC42C10077F2BA /* Model */,
+				EDCA036A2BFC42C10077F2BA /* MonthView */,
+				EDCA03662BFC42C10077F2BA /* Tools */,
 				EDCA034E2BFC41B30077F2BA /* MyHachiPhoneApp.swift */,
 				EDCA03502BFC41B30077F2BA /* ContentView.swift */,
-				EDCA03522BFC41B30077F2BA /* Item.swift */,
 				EDCA03542BFC41B30077F2BA /* Assets.xcassets */,
 				EDCA03562BFC41B30077F2BA /* Preview Content */,
+				ED7843132C0CC69300E7DBF8 /* Localizable.xcstrings */,
 			);
 			path = MyHachiPhone;
 			sourceTree = "<group>";
@@ -68,6 +124,80 @@
 				EDCA03572BFC41B30077F2BA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDCA03662BFC42C10077F2BA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA03622BFC42C10077F2BA /* DateTranslator.swift */,
+				EDCA03632BFC42C10077F2BA /* Hachi.swift */,
+				EDCA03642BFC42C10077F2BA /* Salary.swift */,
+				EDCA03652BFC42C10077F2BA /* WorkTime.swift */,
+				EDCA03B32C02E42C0077F2BA /* MonthlySalary.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		EDCA036A2BFC42C10077F2BA /* MonthView */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA03672BFC42C10077F2BA /* MonthModel.swift */,
+				EDCA03682BFC42C10077F2BA /* MonthView.swift */,
+				EDCA03692BFC42C10077F2BA /* MonthViewModel.swift */,
+			);
+			path = MonthView;
+			sourceTree = "<group>";
+		};
+		EDCA036D2BFC42C10077F2BA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA036B2BFC42C10077F2BA /* CountUPMoney.swift */,
+				EDCA036C2BFC42C10077F2BA /* CountUPState.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EDCA03702BFC42C10077F2BA /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA036D2BFC42C10077F2BA /* UI */,
+				EDCA036E2BFC42C10077F2BA /* InputView.swift */,
+				EDCA036F2BFC42C10077F2BA /* InputViewModel.swift */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
+		EDCA03772BFC42C10077F2BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA03712BFC42C10077F2BA /* InputValue.swift */,
+				EDCA03722BFC42C10077F2BA /* SalaryData.swift */,
+				EDCA03732BFC42C10077F2BA /* SalaryTimeData.swift */,
+				EDCA03742BFC42C10077F2BA /* Wage.swift */,
+				EDCA03752BFC42C10077F2BA /* WorkParameters.swift */,
+				EDCA03762BFC42C10077F2BA /* WorkTimes.swift */,
+				ED78430A2C0AF53400E7DBF8 /* ShiftPlans.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDCA03892BFC6C9E0077F2BA /* NavContent */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA038A2BFC6CBC0077F2BA /* NavContent.swift */,
+				ED78430C2C0C640200E7DBF8 /* RefactorDataSheet.swift */,
+			);
+			path = NavContent;
+			sourceTree = "<group>";
+		};
+		EDCA03AB2C02E24F0077F2BA /* SalaryNavi */ = {
+			isa = PBXGroup;
+			children = (
+				EDCA03AD2C02E28A0077F2BA /* SalaryNavi.swift */,
+				EDCA03AF2C02E2970077F2BA /* SalaryNaviModel.swift */,
+				EDCA03B12C02E2A70077F2BA /* SalaryNaviViewModel.swift */,
+			);
+			path = SalaryNavi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,11 +237,12 @@
 			};
 			buildConfigurationList = EDCA03462BFC41B30077F2BA /* Build configuration list for PBXProject "MyHachiPhone" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = EDCA03422BFC41B30077F2BA;
 			productRefGroup = EDCA034C2BFC41B30077F2BA /* Products */;
@@ -130,6 +261,7 @@
 			files = (
 				EDCA03582BFC41B30077F2BA /* Preview Assets.xcassets in Resources */,
 				EDCA03552BFC41B30077F2BA /* Assets.xcassets in Resources */,
+				ED7843142C0CC69300E7DBF8 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +272,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED78430D2C0C640200E7DBF8 /* RefactorDataSheet.swift in Sources */,
+				EDCA03812BFC42C10077F2BA /* InputView.swift in Sources */,
+				EDCA03B02C02E2970077F2BA /* SalaryNaviModel.swift in Sources */,
+				EDCA03862BFC42C10077F2BA /* Wage.swift in Sources */,
+				EDCA03872BFC42C10077F2BA /* WorkParameters.swift in Sources */,
+				EDCA03842BFC42C10077F2BA /* SalaryData.swift in Sources */,
+				EDCA03802BFC42C10077F2BA /* CountUPState.swift in Sources */,
+				EDCA03852BFC42C10077F2BA /* SalaryTimeData.swift in Sources */,
+				EDCA037F2BFC42C10077F2BA /* CountUPMoney.swift in Sources */,
+				EDCA038B2BFC6CBC0077F2BA /* NavContent.swift in Sources */,
+				EDCA03882BFC42C10077F2BA /* WorkTimes.swift in Sources */,
+				EDCA03B22C02E2A70077F2BA /* SalaryNaviViewModel.swift in Sources */,
+				ED78430B2C0AF53400E7DBF8 /* ShiftPlans.swift in Sources */,
 				EDCA03512BFC41B30077F2BA /* ContentView.swift in Sources */,
-				EDCA03532BFC41B30077F2BA /* Item.swift in Sources */,
+				EDCA037A2BFC42C10077F2BA /* Salary.swift in Sources */,
+				EDCA03822BFC42C10077F2BA /* InputViewModel.swift in Sources */,
+				EDCA037C2BFC42C10077F2BA /* MonthModel.swift in Sources */,
+				EDCA03B42C02E42C0077F2BA /* MonthlySalary.swift in Sources */,
+				EDCA03AE2C02E28A0077F2BA /* SalaryNavi.swift in Sources */,
+				EDCA037E2BFC42C10077F2BA /* MonthViewModel.swift in Sources */,
+				EDCA03792BFC42C10077F2BA /* Hachi.swift in Sources */,
+				EDCA03832BFC42C10077F2BA /* InputValue.swift in Sources */,
 				EDCA034F2BFC41B30077F2BA /* MyHachiPhoneApp.swift in Sources */,
+				EDCA03782BFC42C10077F2BA /* DateTranslator.swift in Sources */,
+				EDCA037D2BFC42C10077F2BA /* MonthView.swift in Sources */,
+				EDCA037B2BFC42C10077F2BA /* WorkTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,11 +434,14 @@
 				DEVELOPMENT_TEAM = WFCKBPMR9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyHachiPhone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "給料計算";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -291,9 +449,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSoft.MyHachiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,11 +470,14 @@
 				DEVELOPMENT_TEAM = WFCKBPMR9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyHachiPhone/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "給料計算";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,9 +485,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nanaSoft.MyHachiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
