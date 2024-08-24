@@ -16,58 +16,50 @@ struct ContentView: View {
     
     @State var isOpenTopView: Bool = false
     @State var path: NavigationPath = NavigationPath()
-
+    
     var body: some View {
         NavigationStack(path: $path) {
-                VStack{
-                    List {
-                            Section(content: {
-                                NavigationLink("入力画面"){
-                                    ScrollView (showsIndicators: false) {
-                                        InputView().navigationTitle("入力画面").padding()
-                                    }
-                                }
-                                NavigationLink("月間別給料"){
-                                    ScrollView(showsIndicators: false){
-                                        VStack{
-                                            MonthView().navigationTitle("月間別給料")
-                                            Spacer().frame(height: 300)
-                                        }
-                                    }.padding()
-                                }
-                                
-                            }, header: {
-                                    Text("Menu")
-                            })
-                    }
-                    
-                    .navigationDestination(isPresented: $isOpenTopView) {
-                        ContentView()
-                    }.frame(maxHeight: 150)
-                    
-                    ScrollView{
-                        Section {
-                            SalaryNavi().padding()
-                        } header: {
-                            HStack{
-                                Text("日給一覧").foregroundStyle(.secondary)
-                                Spacer()
-                            }.padding(.leading).listRowInsets(EdgeInsets())
+            VStack{
+                List {
+                    Section(content: {
+                        NavigationLink("入力画面"){
+                            ScrollView (showsIndicators: false) {
+                                InputView().navigationTitle("入力画面").padding()
+                            }
                         }
-                        Spacer()
+                        NavigationLink("月間別給料"){
+                            ScrollView(showsIndicators: false){
+                                VStack{
+                                    MonthView().navigationTitle("月間別給料")
+                                    Spacer().frame(height: 300)
+                                }
+                            }.padding()
+                        }
+                        
+                    }, header: {
+                        Text("Menu")
+                    })
+                }
+                
+                .navigationDestination(isPresented: $isOpenTopView) {
+                    ContentView()
+                }.frame(maxHeight: 150)
+                
+                ScrollView{
+                    Section {
+                        SalaryNavi().padding()
+                    } header: {
+                        HStack{
+                            Text("日給一覧").foregroundStyle(.secondary)
+                            Spacer()
+                        }.padding(.leading).listRowInsets(EdgeInsets())
                     }
-                }.background(colorScheme == .light ? Color(.secondarySystemBackground) : .clear)
+                    Spacer()
+                }
+            }.background(colorScheme == .light ? Color(.secondarySystemBackground) : .clear)
         }
     }
     
-    
-    func times(fillterd: String)->SalaryTimeData{
-        let res: SalaryTimeData = SalaryTimeData(id: "", salaryId: "", normalTime: 0.0, singleTime: 0.0, doubleTime: 0.0)
-        guard !fillterd.isEmpty else {
-            return res
-        }
-        return times.filter{$0.salaryId.contains(fillterd)}.first ?? res
-    }
 }
 
 #Preview {

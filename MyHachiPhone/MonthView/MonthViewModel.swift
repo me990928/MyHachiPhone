@@ -8,15 +8,16 @@
 import Foundation
 import SwiftData
 
+/// MonthViewのVM
 class MonthViewModel: ObservableObject {
     @Published var model = MonthModel()
     
+    /// SalaryDataを月毎にソート
     func groupByMonth(salaryData: [SalaryData])->[String: [SalaryData]]{
-        
         return MonthlySalary().groupByMonth(salaryData: salaryData)
     }
     
-    // 月の給料を出力
+    /// 月の給料を出力
     func monthlySalary(dict:  [String : [SalaryData]], key: String)->Int{
         return MonthlySalary().monthlySalary(dict: dict, key: key)
     }

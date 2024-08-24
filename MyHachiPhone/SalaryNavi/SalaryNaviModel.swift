@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// ナビゲーション先で表示するデータ構造
 struct SalaryNaviModel {
     var salaryDict: [String: [SalaryData]] = [String: [SalaryData]]()
     var tree: [SalaryTree] = [] // 空の配列として初期化
@@ -19,13 +20,15 @@ struct SalaryNaviModel {
         SalaryTree(id: UUID().uuidString, name: "data2", children: [
             "data2-1", "data2-2"
         ]),
-    
+        
         SalaryTree(id: UUID().uuidString, name: "data3", children: [
             "data3-1", "data3-2"
         ])
     ]
 }
 
+/// 辞書のデータ部
+/// 月毎に給与データを仕分けするための構造体
 struct SalaryTree: Identifiable {
     var id: String
     var name: String

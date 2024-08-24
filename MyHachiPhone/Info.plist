@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleGetInfoString</key>
-	<string></string>
+	<string>MyHatchiiPhone</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

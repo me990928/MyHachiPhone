@@ -8,9 +8,8 @@
 import Foundation
 import SwiftData
 
-// シフト予定モデル
-//　シフトが予定なのか実際に仕事したデータかの判断に使用
-
+/// シフト予定モデル
+///　シフトが予定なのか実際に仕事したデータかの判断に使用
 @Model
 final class ShiftPlans: Identifiable {
     @Attribute(.unique) var id: String

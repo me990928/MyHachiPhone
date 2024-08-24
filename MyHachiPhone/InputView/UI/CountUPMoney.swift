@@ -5,7 +5,7 @@
 //  Created by 広瀬友哉 on 2024/05/08.
 //
 import SwiftUI
-// 特別給与設定を変更するUI
+/// 特別給与設定を変更するUI
 struct countUPManey: View {
     
     @Binding var value: Int

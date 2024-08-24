@@ -7,8 +7,7 @@
 
 import Foundation
 
-// 給与モデル
-
+/// 給与モデル
 struct Wage {
     var baseWage: Int = 1100
     var holidayWage: Int = 1150

@@ -7,13 +7,12 @@
 
 import Foundation
 
+/// 給与形態モデル
 class Hachi {
     
-//    private let calc: Salary
     private let dateTrans = DateTranslator()
     
-    private var daySalary = 0
-
+    /// 入力された値
     private let InputVal: InputValue
     
     init(InptVal: InputValue) {
@@ -33,12 +32,14 @@ class Hachi {
         self.workParam.is22UnderOverWork = self.workTimes.workTime > self.workParam.normalWork
         
         // 時給の初期化
-//        self.wageVals.wage = self.InputVal.isSpecialWage ? self.InputVal.specialWage : self.InputVal.isHoliday ? self.wageVals.holidayWage : self.wageVals.baseWage
         self.wageVals.wage = if self.InputVal.isSpecialWage {
+            // 特殊時給
             self.InputVal.specialWage
         } else if self.InputVal.isHoliday {
+            // 休日時給
             self.wageVals.holidayWage
         } else {
+            // 通常時給
             self.wageVals.baseWage
         }
     }
@@ -46,34 +47,48 @@ class Hachi {
     // 汎用性を考えるなら書き換え可能にしたい
     // 時給
     var wageVals = Wage()
-    // 計算に必要なフラグや指数
+    /// 計算に必要なフラグや指数
     private var workParam = WorkParameters()
-    // 労働時間の10進化
+    /// 労働時間の10進化
     private var workTimes = WorkTimes()
     
-    // 給料の結果を表示
+    /// 給料の結果を表示
+    /// - salary: 給料
+    /// - time: 労働時間モデル
     func calculateSalary()->(salary: Int, times: SalaryTime){
+        
         let salary = Salary(wages: wageVals, times: workTimes, params: workParam)
-//        let salaryRes = workParam.isOverWork ? workParam.isOverWork ? workParam.is22UnderOverWork ? salary.calcOverAfteNightSalary() : salary.calcNightAfterOverSalary() : salary.calcNightSalary() : workParam.isOverWork ? salary.calcOverWorkSalary() : salary.calcNormalSalary()
+        
         let salaryRes = if workParam.isNightWork {
+            // 10時以降の労働あり
             if workParam.isOverWork{
+                // 残業あり
                 if workParam.is22UnderOverWork {
+                    // 22時より前から残業をしていた
                     salary.calcOverAfteNightSalary()
                 } else {
+                    // 10時以降から残業開始
                     salary.calcNightAfterOverSalary()
                 }
             } else {
+                // 夜勤あり残業なし
                 salary.calcNightSalary()
             }
         } else {
+            // 10時より前に終わる
             if workParam.isOverWork {
+                // 残業あり
                 salary.calcOverWorkSalary()
             } else {
+                // 残業なし
                 salary.calcNormalSalary()
             }
         }
+        
         let timeRes = getWorkTimes(salary: salary)
+        
         return (salary: salaryRes, times: timeRes)
+        
     }
     
     // 時給ごとの労働時間

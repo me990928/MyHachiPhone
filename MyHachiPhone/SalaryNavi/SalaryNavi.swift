@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-// 日給一覧
+/// 日給一覧
 struct SalaryNavi: View {
     
     @StateObject var salaryNvVM = SalaryNaviViewModel()
@@ -32,7 +32,7 @@ struct SalaryNavi: View {
         .modelContainer(for: [SalaryData.self, SalaryTimeData.self, ShiftPlans.self], inMemory: true)
 }
 
-// 日給一覧のドロップダウン
+/// 日給一覧のドロップダウン
 struct SalaryNaviChild: View {
     @Environment(\.colorScheme) var colorScheme
     
@@ -65,7 +65,7 @@ struct SalaryNaviChild: View {
                 }.buttonStyle(BorderlessButtonStyle())
             }
             Divider().padding(.bottom)
-
+            
             // yyyy-MMを押した時に開く
             if isOpend {
                 VStack(spacing: 0){
@@ -94,7 +94,7 @@ struct SalaryNaviChild: View {
         }
     }
     
-//    労働時間データから任意のデータを呼び出す
+    /// 労働時間データから任意のデータを呼び出す
     func times(fillterd: String)->SalaryTimeData{
         let res: SalaryTimeData = SalaryTimeData(id: "", salaryId: "", normalTime: 0.0, singleTime: 0.0, doubleTime: 0.0)
         guard !fillterd.isEmpty else {
@@ -102,17 +102,17 @@ struct SalaryNaviChild: View {
         }
         return times.filter{$0.salaryId.contains(fillterd)}.first ?? res
     }
-//    英語表記の時にyyyy-MMをMM-yyyynに変換する
-//    ローカライズで処理しない理由
-//    英語表記時に以下３つのデータを変換する場合、表示が最後のデータになってしまうための策
-//    ->data
-//    2024-04
-//    2024-05
-//    2024-06
-//    ->View
-//    06-2024
-//    06-2024
-//    06-2024
+    ///    英語表記の時にyyyy-MMをMM-yyyynに変換する
+    ///    ローカライズで処理しない理由
+    ///    英語表記時に以下３つのデータを変換する場合、表示が最後のデータになってしまうための策
+    ///    ->data
+    ///    2024-04
+    ///    2024-05
+    ///    2024-06
+    ///    ->View
+    ///    06-2024
+    ///    06-2024
+    ///    06-2024
     func keyYeerMonthChange(key: String)->String{
         let splitKey = key.split(separator: "-")
         var res = key

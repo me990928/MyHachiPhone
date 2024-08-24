@@ -8,16 +8,17 @@
 import Foundation
 import SwiftData
 
+// SalaryNaviのVM
 class SalaryNaviViewModel: ObservableObject {
     @Published var model = SalaryNaviModel()
     
-    // mdoelの辞書に値をセット
+    /// mdoelの辞書に値をセット
     func setSalaryDict(data: [SalaryData]){
         self.model.salaryDict = MonthlySalary().groupByMonth(salaryData: data)
     }
     
-    // ツリー
-//    ドロップダウンのタイトルとリストを結ぶ配列
+    /// ツリー
+    /// ドロップダウンのタイトルとリストを結ぶ配列
     func setSalaryTree() {
         self.model.tree = [] // ツリーを初期化
         

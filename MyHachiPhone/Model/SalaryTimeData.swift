@@ -8,8 +8,7 @@
 import Foundation
 import SwiftData
 
-// 労働時間のテーブル
-
+/// 労働時間のテーブル
 @Model
 final class SalaryTimeData {
     @Attribute(.unique) var id: String

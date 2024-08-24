@@ -6,10 +6,10 @@
 //
 
 import Foundation
-
+/// データを月毎に扱う
 class MonthlySalary {
     
-    // データを月間ごとに仕分け
+    /// データを月間ごとに仕分け
     func groupByMonth(salaryData: [SalaryData])->[String: [SalaryData]]{
         
         var groupData = [String: [SalaryData]]()
@@ -26,11 +26,10 @@ class MonthlySalary {
                 }
             }
         }
-//        print(groupData)
         return groupData
     }
     
-    // 月の給料を出力
+    /// 月の給料を出力
     func monthlySalary(dict:  [String : [SalaryData]], key: String)->Int{
         var monthly: Int = 0
         for data in dict[key] ?? [] {

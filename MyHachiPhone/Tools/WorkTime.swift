@@ -8,8 +8,8 @@
 import Foundation
 import SwiftData
 
+/// SalaryTimeを扱うモデル
 class WorkTime {
-//    var model: SalaryTimeData
     var modelContext: ModelContext
     var times: SalaryTime
     
@@ -18,11 +18,13 @@ class WorkTime {
         self.times = times
     }
     
+    /// 追加
     func insertModel(_ salary: SalaryData){
         let newModel = SalaryTimeData(id: UUID().uuidString, salaryId: salary.id, normalTime: times.normal, singleTime: times.single, doubleTime: times.double)
         modelContext.insert(newModel)
     }
     
+    /// アップデート
     func refactorModel(_ salary: SalaryData){
         
         let id = salary.id

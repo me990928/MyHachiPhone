@@ -242,6 +242,17 @@
         }
       }
     },
+    "お疲れ様です。\n終了時間が予定と合っているか確認しよう。" : {
+      "comment" : "local push message.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thanks for your help. let's make sure the end time is in line with the schedule."
+          }
+        }
+      }
+    },
     "シフト予定" : {
       "localizations" : {
         "en" : {

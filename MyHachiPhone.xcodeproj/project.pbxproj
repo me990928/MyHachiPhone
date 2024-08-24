@@ -36,6 +36,9 @@
 		EDCA03B02C02E2970077F2BA /* SalaryNaviModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03AF2C02E2970077F2BA /* SalaryNaviModel.swift */; };
 		EDCA03B22C02E2A70077F2BA /* SalaryNaviViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03B12C02E2A70077F2BA /* SalaryNaviViewModel.swift */; };
 		EDCA03B42C02E42C0077F2BA /* MonthlySalary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA03B32C02E42C0077F2BA /* MonthlySalary.swift */; };
+		EDF4CF612C71531C00EFA5BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF602C71531C00EFA5BC /* AppDelegate.swift */; };
+		EDF4CF632C71543000EFA5BC /* LocalPuschTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF622C71543000EFA5BC /* LocalPuschTools.swift */; };
+		EDF4CF652C715DFB00EFA5BC /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EDF4CF642C715DFB00EFA5BC /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		EDCA03AF2C02E2970077F2BA /* SalaryNaviModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryNaviModel.swift; sourceTree = "<group>"; };
 		EDCA03B12C02E2A70077F2BA /* SalaryNaviViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryNaviViewModel.swift; sourceTree = "<group>"; };
 		EDCA03B32C02E42C0077F2BA /* MonthlySalary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySalary.swift; sourceTree = "<group>"; };
+		EDF4CF602C71531C00EFA5BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDF4CF622C71543000EFA5BC /* LocalPuschTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPuschTools.swift; sourceTree = "<group>"; };
+		EDF4CF642C715DFB00EFA5BC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +117,11 @@
 				EDCA03662BFC42C10077F2BA /* Tools */,
 				EDCA034E2BFC41B30077F2BA /* MyHachiPhoneApp.swift */,
 				EDCA03502BFC41B30077F2BA /* ContentView.swift */,
+				EDF4CF602C71531C00EFA5BC /* AppDelegate.swift */,
 				EDCA03542BFC41B30077F2BA /* Assets.xcassets */,
 				EDCA03562BFC41B30077F2BA /* Preview Content */,
 				ED7843132C0CC69300E7DBF8 /* Localizable.xcstrings */,
+				EDF4CF642C715DFB00EFA5BC /* InfoPlist.xcstrings */,
 			);
 			path = MyHachiPhone;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 				EDCA03642BFC42C10077F2BA /* Salary.swift */,
 				EDCA03652BFC42C10077F2BA /* WorkTime.swift */,
 				EDCA03B32C02E42C0077F2BA /* MonthlySalary.swift */,
+				EDF4CF622C71543000EFA5BC /* LocalPuschTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 			files = (
 				EDCA03582BFC41B30077F2BA /* Preview Assets.xcassets in Resources */,
 				EDCA03552BFC41B30077F2BA /* Assets.xcassets in Resources */,
+				EDF4CF652C715DFB00EFA5BC /* InfoPlist.xcstrings in Resources */,
 				ED7843142C0CC69300E7DBF8 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +285,7 @@
 				ED78430D2C0C640200E7DBF8 /* RefactorDataSheet.swift in Sources */,
 				EDCA03812BFC42C10077F2BA /* InputView.swift in Sources */,
 				EDCA03B02C02E2970077F2BA /* SalaryNaviModel.swift in Sources */,
+				EDF4CF632C71543000EFA5BC /* LocalPuschTools.swift in Sources */,
 				EDCA03862BFC42C10077F2BA /* Wage.swift in Sources */,
 				EDCA03872BFC42C10077F2BA /* WorkParameters.swift in Sources */,
 				EDCA03842BFC42C10077F2BA /* SalaryData.swift in Sources */,
@@ -293,6 +304,7 @@
 				EDCA03AE2C02E28A0077F2BA /* SalaryNavi.swift in Sources */,
 				EDCA037E2BFC42C10077F2BA /* MonthViewModel.swift in Sources */,
 				EDCA03792BFC42C10077F2BA /* Hachi.swift in Sources */,
+				EDF4CF612C71531C00EFA5BC /* AppDelegate.swift in Sources */,
 				EDCA03832BFC42C10077F2BA /* InputValue.swift in Sources */,
 				EDCA034F2BFC41B30077F2BA /* MyHachiPhoneApp.swift in Sources */,
 				EDCA03782BFC42C10077F2BA /* DateTranslator.swift in Sources */,
@@ -437,7 +449,7 @@
 				INFOPLIST_FILE = MyHachiPhone/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "給料計算";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2024 Yuya Hirose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -473,7 +485,7 @@
 				INFOPLIST_FILE = MyHachiPhone/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "給料計算";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2024 Yuya Hirose";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

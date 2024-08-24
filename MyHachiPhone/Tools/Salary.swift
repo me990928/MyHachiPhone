@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 供与計算モデル
 class Salary {
     private let wages: Wage
     private let times: WorkTimes

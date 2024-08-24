@@ -7,8 +7,7 @@
 
 import Foundation
 
-// 労働時間モデル
-
+/// 労働時間モデル
 struct WorkTimes {
     var startTimeHour: Double = 0.0     // 労働開始時間
     var endTimeHour: Double = 0.0       // 労働終了時間

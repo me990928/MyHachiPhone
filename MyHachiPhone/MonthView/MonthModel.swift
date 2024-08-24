@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 月毎のデータを辞書として保持
 struct MonthModel {
     var monthDict: [String: [SalaryData]] = [String: [SalaryData]]()
 }

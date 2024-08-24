@@ -8,8 +8,7 @@
 import SwiftUI
 import SwiftData
 
-// 月間の給与を一覧表示
-
+/// 月間の給与を一覧表示
 struct MonthView: View {
     
     @Query(sort: \SalaryData.startTime) private var salary: [SalaryData]
@@ -18,14 +17,14 @@ struct MonthView: View {
     @State var isOpend: Bool = false
     
     var body: some View {
-            VStack(alignment: .leading){
-                ForEach(monthVM.model.monthDict.keys.sorted(), id: \.self){ key in
-                    MonthSectionView(monthVM: monthVM, key: key)
-                }
-            }.onAppear(){
-//                月毎のSalaryDataを出勤日時を”yyyy-MM”にした文字型で辞書化
-                monthVM.model.monthDict = monthVM.groupByMonth(salaryData: salary)
+        VStack(alignment: .leading){
+            ForEach(monthVM.model.monthDict.keys.sorted(), id: \.self){ key in
+                MonthSectionView(monthVM: monthVM, key: key)
             }
+        }.onAppear(){
+            //                月毎のSalaryDataを出勤日時を”yyyy-MM”にした文字型で辞書化
+            monthVM.model.monthDict = monthVM.groupByMonth(salaryData: salary)
+        }
     }
 }
 
@@ -34,6 +33,7 @@ struct MonthView: View {
         .modelContainer(for: [SalaryData.self, SalaryTimeData.self, ShiftPlans.self], inMemory: true)
 }
 
+/// 月間の給与を表示するページの子ビュー
 struct MonthSectionView: View {
     
     @State var isOpend: Bool = false
@@ -49,53 +49,53 @@ struct MonthSectionView: View {
     let currentLocale = Locale.current
     
     var body: some View {
-//            ドロップダウン
-            Section(isExpanded: $isOpend ) {
+        //            ドロップダウン
+        Section(isExpanded: $isOpend ) {
+            
+            ForEach(monthVM.model.monthDict[key] ?? []) { dict in
                 
-                ForEach(monthVM.model.monthDict[key] ?? []) { dict in
-                    
-                    VStack(alignment: .leading){
-                        HStack{
-                            Text("\(DateTranslator().DatetoStringFormatter(date: dict.startTime, NSLocalizedString("time_format", comment: "time format"))) 出勤").padding(.top, 5)
-                            Spacer()
-                            if isPlan(plans: plans, id: dict.id) {
-                                Text("予定").foregroundStyle(.red)
+                VStack(alignment: .leading){
+                    HStack{
+                        Text("\(DateTranslator().DatetoStringFormatter(date: dict.startTime, NSLocalizedString("time_format", comment: "time format"))) 出勤").padding(.top, 5)
+                        Spacer()
+                        if isPlan(plans: plans, id: dict.id) {
+                            Text("予定").foregroundStyle(.red)
+                        }
+                    }
+                    Text("\(DateTranslator().DatetoStringFormatter(date: dict.endTime,  NSLocalizedString("time_format", comment: "time format"))) 退勤")
+                    Text("休憩：\(String(format: "%.2f", dict.breakTime))")
+                    Text("時給：\(dict.isSpecialWage ? Int(dict.specialWage) : dict.isHoliday ? Int(1150) : Int(1100))")
+                    Text("給料：\(dict.salary)")
+                }
+                
+            }
+            Divider()
+        } header: {
+            //                ラベル
+            VStack(alignment: .leading){
+                Text(keyYeerMonthChange(key: key)).font(.title2).foregroundStyle(.secondary)
+                HStack{
+                    Text("合計：\(monthVM.monthlySalary(dict: monthVM.model.monthDict , key: key))").font(.title).bold()
+                    Spacer()
+                    //                        ダウンフラグ操作
+                    Button {
+                        withAnimation(){
+                            isOpend.toggle()
+                            if isOpend {
+                                rotate = 180.0
+                            } else {
+                                rotate = 0.0
                             }
                         }
-                        Text("\(DateTranslator().DatetoStringFormatter(date: dict.endTime,  NSLocalizedString("time_format", comment: "time format"))) 退勤")
-                        Text("休憩：\(String(format: "%.2f", dict.breakTime))")
-                        Text("時給：\(dict.isSpecialWage ? Int(dict.specialWage) : dict.isHoliday ? Int(1150) : Int(1100))")
-                        Text("給料：\(dict.salary)")
-                    }
+                    } label: {
+                        Image(systemName: "chevron.up").rotationEffect(Angle(degrees: rotate))
+                    }.buttonStyle(BorderlessButtonStyle())
                     
                 }
                 Divider()
-            } header: {
-//                ラベル
-                VStack(alignment: .leading){
-                    Text(keyYeerMonthChange(key: key)).font(.title2).foregroundStyle(.secondary)
-                    HStack{
-                        Text("合計：\(monthVM.monthlySalary(dict: monthVM.model.monthDict , key: key))").font(.title).bold()
-                        Spacer()
-//                        ダウンフラグ操作
-                        Button {
-                            withAnimation(){
-                                isOpend.toggle()
-                                if isOpend {
-                                    rotate = 180.0
-                                } else {
-                                    rotate = 0.0
-                                }
-                            }
-                        } label: {
-                            Image(systemName: "chevron.up").rotationEffect(Angle(degrees: rotate))
-                        }.buttonStyle(BorderlessButtonStyle())
-
-                    }
-                    Divider()
-                }
-            }.transition(.opacity)
-        }
+            }
+        }.transition(.opacity)
+    }
     //    英語表記の時にyyyy-MMをMM-yyyynに変換する
     //    ローカライズで処理しない理由
     //    英語表記時に以下３つのデータを変換する場合、表示が最後のデータになってしまうための策

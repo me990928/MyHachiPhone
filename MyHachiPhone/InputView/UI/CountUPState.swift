@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-// 休憩時間のカウントを上下させるUI
+/// 休憩時間のカウントを上下させるUI
 struct CountUPState<T>: View where T: BinaryFloatingPoint {
     
     @Binding var value: T

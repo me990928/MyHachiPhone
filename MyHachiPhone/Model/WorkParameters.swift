@@ -7,7 +7,7 @@
 
 import Foundation
 // parameters
-//　給与計算のパラメータ群
+///　給与計算のパラメータ群
 struct WorkParameters {
     var isNightWork: Bool = false   // 夜勤の有無
     var isOverWork: Bool = false    // 残業の有無

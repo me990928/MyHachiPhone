@@ -7,8 +7,7 @@
 
 import Foundation
 
-// InputViewのモデル
-
+/// InputViewのモデル
 struct InputValue {
     var startTime: Date
     var endTime: Date

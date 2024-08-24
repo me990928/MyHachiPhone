@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct MyHachiPhoneApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             SalaryData.self,

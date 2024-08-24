@@ -8,8 +8,7 @@
 import Foundation
 import SwiftData
 
-// 給与テーブルのモデル
-
+/// 給与テーブルのモデル
 @Model
 final class SalaryData: Identifiable {
     @Attribute(.unique) var id: String
@@ -31,13 +30,4 @@ final class SalaryData: Identifiable {
         self.isSpecialWage = isSpecialWage
         self.salary = salary
     }
-    
-    func getMinMaxMonths() -> (minMonth: Int, maxMonth: Int)? {
-            let calendar = Calendar.current
-            guard let startMonth = calendar.dateComponents([.month], from: startTime).month else {
-                return nil
-            }
-            
-            return (minMonth: startMonth, maxMonth: startMonth)
-        }
 }
