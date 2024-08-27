@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct FloatingButton: View {
+    @Binding var isOpen: Bool
     var body: some View {
         Button {
-            
+            isOpen.toggle()
         } label: {
             ZStack {
                 Circle().frame(width: 70)
@@ -18,8 +19,4 @@ struct FloatingButton: View {
             }
         }
     }
-}
-
-#Preview {
-    FloatingButton()
 }
