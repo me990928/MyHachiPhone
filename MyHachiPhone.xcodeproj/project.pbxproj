@@ -40,6 +40,8 @@
 		EDF4CF632C71543000EFA5BC /* LocalPuschTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF622C71543000EFA5BC /* LocalPuschTools.swift */; };
 		EDF4CF652C715DFB00EFA5BC /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EDF4CF642C715DFB00EFA5BC /* InfoPlist.xcstrings */; };
 		EDF4CF692C7E539200EFA5BC /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF682C7E539100EFA5BC /* FloatingButton.swift */; };
+		EDF4CF6B2C7E572600EFA5BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF6A2C7E572600EFA5BC /* SettingsView.swift */; };
+		EDF4CF6D2C7E574200EFA5BC /* UserDefaultsMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF6C2C7E574200EFA5BC /* UserDefaultsMan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		EDF4CF622C71543000EFA5BC /* LocalPuschTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPuschTools.swift; sourceTree = "<group>"; };
 		EDF4CF642C715DFB00EFA5BC /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		EDF4CF682C7E539100EFA5BC /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		EDF4CF6A2C7E572600EFA5BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EDF4CF6C2C7E574200EFA5BC /* UserDefaultsMan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 				EDCA03652BFC42C10077F2BA /* WorkTime.swift */,
 				EDCA03B32C02E42C0077F2BA /* MonthlySalary.swift */,
 				EDF4CF622C71543000EFA5BC /* LocalPuschTools.swift */,
+				EDF4CF6C2C7E574200EFA5BC /* UserDefaultsMan.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF4CF672C7E536B00EFA5BC /* UI */,
+				EDF4CF6A2C7E572600EFA5BC /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				EDCA03B22C02E2A70077F2BA /* SalaryNaviViewModel.swift in Sources */,
 				ED78430B2C0AF53400E7DBF8 /* ShiftPlans.swift in Sources */,
 				EDCA03512BFC41B30077F2BA /* ContentView.swift in Sources */,
+				EDF4CF6B2C7E572600EFA5BC /* SettingsView.swift in Sources */,
 				EDCA037A2BFC42C10077F2BA /* Salary.swift in Sources */,
 				EDCA03822BFC42C10077F2BA /* InputViewModel.swift in Sources */,
 				EDCA037C2BFC42C10077F2BA /* MonthModel.swift in Sources */,
@@ -326,6 +333,7 @@
 				EDCA03792BFC42C10077F2BA /* Hachi.swift in Sources */,
 				EDF4CF612C71531C00EFA5BC /* AppDelegate.swift in Sources */,
 				EDCA03832BFC42C10077F2BA /* InputValue.swift in Sources */,
+				EDF4CF6D2C7E574200EFA5BC /* UserDefaultsMan.swift in Sources */,
 				EDCA034F2BFC41B30077F2BA /* MyHachiPhoneApp.swift in Sources */,
 				EDCA03782BFC42C10077F2BA /* DateTranslator.swift in Sources */,
 				EDCA037D2BFC42C10077F2BA /* MonthView.swift in Sources */,

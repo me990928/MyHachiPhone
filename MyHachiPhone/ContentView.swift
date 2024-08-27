@@ -16,47 +16,60 @@ struct ContentView: View {
     
     @State var isOpenTopView: Bool = false
     @State var path: NavigationPath = NavigationPath()
+    @State var isOpenSettingsView: Bool = false
     
     var body: some View {
         NavigationStack(path: $path) {
-            VStack{
-                List {
-                    Section(content: {
-                        NavigationLink("入力画面"){
-                            ScrollView (showsIndicators: false) {
-                                InputView().navigationTitle("入力画面").padding()
-                            }
-                        }
-                        NavigationLink("月間別給料"){
-                            ScrollView(showsIndicators: false){
-                                VStack{
-                                    MonthView().navigationTitle("月間別給料")
-                                    Spacer().frame(height: 300)
+            ZStack {
+                VStack{
+                    List {
+                        Section(content: {
+                            NavigationLink("入力画面"){
+                                ScrollView (showsIndicators: false) {
+                                    InputView().navigationTitle("入力画面").padding()
                                 }
-                            }.padding()
-                        }
-                        
-                    }, header: {
-                        Text("Menu")
-                    })
-                }
-                
-                .navigationDestination(isPresented: $isOpenTopView) {
-                    ContentView()
-                }.frame(maxHeight: 150)
-                
-                ScrollView{
-                    Section {
-                        SalaryNavi().padding()
-                    } header: {
-                        HStack{
-                            Text("日給一覧").foregroundStyle(.secondary)
-                            Spacer()
-                        }.padding(.leading).listRowInsets(EdgeInsets())
+                            }
+                            NavigationLink("月間別給料"){
+                                ScrollView(showsIndicators: false){
+                                    VStack{
+                                        MonthView().navigationTitle("月間別給料")
+                                        Spacer().frame(height: 300)
+                                    }
+                                }.padding()
+                            }
+                            
+                        }, header: {
+                            Text("Menu")
+                        })
                     }
+                    
+                    .navigationDestination(isPresented: $isOpenTopView) {
+                        ContentView()
+                    }.frame(maxHeight: 150)
+                    
+                    ScrollView{
+                        Section {
+                            SalaryNavi().padding()
+                        } header: {
+                            HStack{
+                                Text("日給一覧").foregroundStyle(.secondary)
+                                Spacer()
+                            }.padding(.leading).listRowInsets(EdgeInsets())
+                        }
+                        Spacer()
+                    }
+                }.background(colorScheme == .light ? Color(.secondarySystemBackground) : .clear)
+                
+                VStack(alignment: .trailing){
                     Spacer()
-                }
-            }.background(colorScheme == .light ? Color(.secondarySystemBackground) : .clear)
+                    HStack {
+                        Spacer()
+                        FloatingButton(isOpen: $isOpenSettingsView).sheet(isPresented: $isOpenSettingsView, content: {
+                            SettingsView()
+                        })
+                    }
+                }.padding()
+            }
         }
     }
     
