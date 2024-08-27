@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct YearSalaryDeleteView: View {
+    
+    @Environment(\.modelContext) private var modelContext
+    @Query private var plans: [ShiftPlans]
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
