@@ -12,4 +12,9 @@ struct Wage {
     var baseWage: Int = 1100
     var holidayWage: Int = 1150
     var wage: Int = 0   // この値が倍率を含めた実際の時給になる
+    
+    init(){
+        let wage = UserDefaultsMan().loadUserDefaultString(key: "wage")
+        self.baseWage = Int(wage) ?? 1100
+    }
 }
