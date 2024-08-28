@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
+    
+    @Environment(\.modelContext) private var modelContext
+    @Query (sort: \SalaryData.startTime) private var salary: [SalaryData]
     
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var SettingVM = SettingsViewModel()
@@ -24,54 +28,51 @@ struct SettingsView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                if edit {
-                    Button("キャンセル", role: .cancel) {
-                        withAnimation {
-                            edit.toggle()
-                        }
-                    }.padding(.leading)
-                }
-                Spacer()
-                Button(action: {
+        NavigationStack {
+            VStack {
+                HStack {
                     if edit {
-                        SettingVM.editTeate(teate: teate)
-                        if !wage.isEmpty {
-                            SettingVM.editWage(wage: wage){
-                                wagePlaceholder = UserDefaults().string(forKey: "wage") ?? "1100"
-                                withAnimation {
+                        Button("キャンセル", role: .cancel) {
+                            edit.toggle()
+                        }.padding(.leading)
+                    }
+                    Spacer()
+                    Button(action: {
+                        if edit {
+                            SettingVM.editTeate(teate: teate)
+                            if !wage.isEmpty {
+                                SettingVM.editWage(wage: wage){
+                                    wagePlaceholder = UserDefaults().string(forKey: "wage") ?? "1100"
                                     wage = ""
                                 }
                             }
-                        }
-                        withAnimation {
+                            edit.toggle()
+                        } else {
                             edit.toggle()
                         }
-                    } else {
-                        withAnimation {
-                            edit.toggle()
-                        }
+                    }, label: {
+                        
+                        Text(edit ? "保存" : "編集")
+                        
+                    })
+                    
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                List {
+                    HStack{
+                        Text("時給")
+                        Spacer()
+                        TextField(wagePlaceholder, text: $wage).multilineTextAlignment(.trailing).keyboardType(.decimalPad)
+                        Text("円")
+                    }.disabled(!edit)
+                    HStack{
+                        Toggle("手当なし計算", isOn: $teate)
+                    }.disabled(!edit)
+                    NavigationLink("年代別削除") {
+                        YearSalaryDeleteView(yearSalaryDeleteModel: .init(salary: salary))
                     }
-                }, label: {
-                    
-                    Text(edit ? "保存" : "編集")
-                    
-                }).buttonStyle(BorderedProminentButtonStyle())
-                
-            }.padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
-            List {
-                HStack{
-                    Text("時給")
-                    Spacer()
-                    TextField(wagePlaceholder, text: $wage).multilineTextAlignment(.trailing).keyboardType(.decimalPad)
-                    Text("円")
                 }
-                HStack{
-                    Toggle("手当なし計算", isOn: $teate)
-                }
-            }.disabled(!edit)
-        }.background(colorScheme == .light ? Color(.secondarySystemBackground) : .clear)
+            }.background(colorScheme == .light ? Color(.secondarySystemBackground) : .clear)
+        }
     }
 }
 
