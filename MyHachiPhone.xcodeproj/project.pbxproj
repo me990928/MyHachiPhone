@@ -44,6 +44,7 @@
 		EDF4CF6D2C7E574200EFA5BC /* UserDefaultsMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF6C2C7E574200EFA5BC /* UserDefaultsMan.swift */; };
 		EDF4CF6F2C7E64E200EFA5BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF6E2C7E64E200EFA5BC /* SettingsViewModel.swift */; };
 		EDF4CF712C7E829E00EFA5BC /* YearSalaryDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF702C7E829E00EFA5BC /* YearSalaryDeleteView.swift */; };
+		EDF4CF732C7E85B100EFA5BC /* YearsSalaryDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4CF722C7E85B100EFA5BC /* YearsSalaryDeleteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		EDF4CF6C2C7E574200EFA5BC /* UserDefaultsMan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMan.swift; sourceTree = "<group>"; };
 		EDF4CF6E2C7E64E200EFA5BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		EDF4CF702C7E829E00EFA5BC /* YearSalaryDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSalaryDeleteView.swift; sourceTree = "<group>"; };
+		EDF4CF722C7E85B100EFA5BC /* YearsSalaryDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsSalaryDeleteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				EDF4CF6A2C7E572600EFA5BC /* SettingsView.swift */,
 				EDF4CF6E2C7E64E200EFA5BC /* SettingsViewModel.swift */,
 				EDF4CF702C7E829E00EFA5BC /* YearSalaryDeleteView.swift */,
+				EDF4CF722C7E85B100EFA5BC /* YearsSalaryDeleteModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				EDCA03512BFC41B30077F2BA /* ContentView.swift in Sources */,
 				EDF4CF6F2C7E64E200EFA5BC /* SettingsViewModel.swift in Sources */,
 				EDF4CF6B2C7E572600EFA5BC /* SettingsView.swift in Sources */,
+				EDF4CF732C7E85B100EFA5BC /* YearsSalaryDeleteModel.swift in Sources */,
 				EDCA037A2BFC42C10077F2BA /* Salary.swift in Sources */,
 				EDCA03822BFC42C10077F2BA /* InputViewModel.swift in Sources */,
 				EDCA037C2BFC42C10077F2BA /* MonthModel.swift in Sources */,

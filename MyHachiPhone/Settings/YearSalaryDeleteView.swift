@@ -49,5 +49,50 @@ struct YearSalaryDeleteView: View {
 }
 
 #Preview {
-    YearSalaryDeleteView()
+    YearSalaryDeleteView(yearSalaryDeleteModel: .init(salary: []))
+}
+
+struct ListChild: View {
+    
+    @Binding var rowCount: Int
+    
+    @State var isAlert: Bool = false
+    @State var label: String = ""
+    @State var isDelete: Bool = false
+    
+    let text: String
+    let last: Bool
+    
+    var body: some View {
+        if !isDelete {
+            Button(action: {
+                label = text
+                isAlert.toggle()
+            }, label: {
+                VStack{
+                    HStack{
+                        Text(text).foregroundStyle(Color(.label))
+                        Spacer()
+                    }.padding(.leading)
+                    if !last {
+                        Divider().background(Color(.label))
+                    }
+                }
+            })
+            .transition(.slide)
+            .alert("警告", isPresented: $isAlert) {
+                Button("戻る", role: .cancel){
+                    
+                }
+                Button("削除", role: .destructive) {
+                    rowCount -= 1
+                    withAnimation {
+                        isDelete.toggle()
+                    }
+                }
+            } message: {
+                Text("\(label)年のデータを削除します。")
+            }
+        }
+    }
 }
