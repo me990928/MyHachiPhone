@@ -9,9 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct YearSalaryDeleteView: View {
-    
-    @Environment(\.modelContext) private var modelContext
-    @Query private var plans: [ShiftPlans]
+    @Environment(\.colorScheme) var colorScheme
+    @State var isAlert: Bool = false
+    @State var isView: Bool = true
+    @State var label: String = ""
+    @State var height: CGFloat = 0
+    @State var rowCount: Int = 0
+    var yearSalaryDeleteModel: YearsSalaryDeleteModel
     
     var body: some View {
         ZStack{
