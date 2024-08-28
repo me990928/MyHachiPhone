@@ -9,7 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct YearSalaryDeleteView: View {
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) var colorScheme
+    @Query (sort: \SalaryData.startTime) private var salary: [SalaryData]
     @State var isAlert: Bool = false
     @State var isView: Bool = true
     @State var label: String = ""
@@ -23,7 +25,7 @@ struct YearSalaryDeleteView: View {
                 VStack{
                     VStack(alignment: .leading){
                         ForEach(yearSalaryDeleteModel.yearList, id: \.self) { year in
-                            ListChild(rowCount: $rowCount, text: year, last: yearSalaryDeleteModel.yearList.last == year)
+                            ListChild(rowCount: $rowCount, yearSalaryDeleteModel: .init(salary: []), text: year, last: yearSalaryDeleteModel.yearList.last == year)
                         }
                     }.padding()
                         .onAppear(){
@@ -54,11 +56,16 @@ struct YearSalaryDeleteView: View {
 
 struct ListChild: View {
     
+    @Environment(\.modelContext) private var modelContext
+    @Query (sort: \SalaryData.startTime) private var salary: [SalaryData]
+    
     @Binding var rowCount: Int
     
     @State var isAlert: Bool = false
     @State var label: String = ""
     @State var isDelete: Bool = false
+    
+    var yearSalaryDeleteModel: YearsSalaryDeleteModel
     
     let text: String
     let last: Bool
@@ -85,6 +92,7 @@ struct ListChild: View {
                     
                 }
                 Button("削除", role: .destructive) {
+                    yearSalaryDeleteModel.yearModelDelete(label: label, salarys: salary, mc: modelContext)
                     rowCount -= 1
                     withAnimation {
                         isDelete.toggle()
