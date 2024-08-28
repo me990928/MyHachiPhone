@@ -7,6 +7,7 @@
 
 import Foundation
 import Observation
+import SwiftData
 
 @Observable
 class YearsSalaryDeleteModel {
@@ -20,4 +21,15 @@ class YearsSalaryDeleteModel {
             }
         }
     }
+    
+    func yearModelDelete(label: String, salarys: [SalaryData] ,mc: ModelContext){
+        for salary in salarys {
+            if label == DateTranslator().dateComponents(salary.startTime).year?.description ?? "" {
+                // labelと同じ年代のデータを抽出
+                mc.delete(salary)
+            }
+        }
+        try! mc.save()
+    }
+    
 }
