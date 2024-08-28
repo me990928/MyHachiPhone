@@ -64,9 +64,10 @@ struct ContentView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        FloatingButton(isOpen: $isOpenSettingsView).sheet(isPresented: $isOpenSettingsView, content: {
-                            SettingsView()
-                        })
+                        FloatingButton(isOpen: $isOpenSettingsView)
+                            .navigationDestination(isPresented: $isOpenSettingsView) {
+                                SettingsView()
+                            }
                     }
                 }.padding()
             }
