@@ -15,6 +15,9 @@ class Hachi {
     /// 入力された値
     private let InputVal: InputValue
     
+    /// 手当なし計算フラグ
+    private let teateFlag: Bool
+    
     init(InptVal: InputValue) {
         // 入力部の初期化
         self.InputVal = InptVal
@@ -42,6 +45,8 @@ class Hachi {
             // 通常時給
             self.wageVals.baseWage
         }
+        
+        self.teateFlag = UserDefaultsMan().loadUserDefaultBool(key: "teate")
     }
     
     // 汎用性を考えるなら書き換え可能にしたい
@@ -59,6 +64,15 @@ class Hachi {
         
         let salary = Salary(wages: wageVals, times: workTimes, params: workParam)
         
+        // 手当なし計算：true
+        if teateFlag {
+            let salaryRes = salary.calcNormalSalary()
+            let timeRes = getWorkTimes(salary: salary)
+            
+            return (salary: salaryRes, times: timeRes)
+        }
+        
+        // 手当なし計算：false
         let salaryRes = if workParam.isNightWork {
             // 10時以降の労働あり
             if workParam.isOverWork{

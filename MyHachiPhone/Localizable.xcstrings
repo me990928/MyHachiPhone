@@ -101,6 +101,16 @@
         }
       }
     },
+    "%@年のデータを削除します。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete data for the year %@."
+          }
+        }
+      }
+    },
     "+0.1" : {
       "localizations" : {
         "en" : {
@@ -253,6 +263,16 @@
         }
       }
     },
+    "キャンセル" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
     "シフト予定" : {
       "localizations" : {
         "en" : {
@@ -334,6 +354,16 @@
         }
       }
     },
+    "保存" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
     "入力内容をリセットします" : {
       "localizations" : {
         "en" : {
@@ -364,6 +394,16 @@
         }
       }
     },
+    "円" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yen"
+          }
+        }
+      }
+    },
     "出勤" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -381,6 +421,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Work date：%@"
+          }
+        }
+      }
+    },
+    "削除" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
           }
         }
       }
@@ -435,6 +485,16 @@
         }
       }
     },
+    "年代別削除" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deletion by Age"
+          }
+        }
+      }
+    },
     "戻る" : {
       "localizations" : {
         "en" : {
@@ -445,12 +505,32 @@
         }
       }
     },
+    "手当なし計算" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculation without allowance"
+          }
+        }
+      }
+    },
     "日給一覧" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Daily wage list"
+          }
+        }
+      }
+    },
+    "時給" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wage"
           }
         }
       }

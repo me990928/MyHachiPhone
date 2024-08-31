@@ -53,7 +53,7 @@ class DateTranslator {
     
     
     // Dateのコンポーネント化
-    private func dateComponents(_ date: Date)->DateComponents {
+    func dateComponents(_ date: Date)->DateComponents {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
     }
     
